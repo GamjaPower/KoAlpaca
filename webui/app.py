@@ -88,9 +88,7 @@ with gr.Blocks(css="#chatbot .overflow-y-auto{height:750px}") as demo:
         chatbot = gr.Chatbot(elem_id="chatbot")
 
     with gr.Row():
-        txt = gr.Textbox(show_label=False, placeholder="Send a message...").style(
-            container=False
-        )
+        txt = gr.Textbox(show_label=False, placeholder="Send a message...")
 
     txt.submit(answer, [state, state_chatbot, txt], [state, state_chatbot, chatbot])
     txt.submit(lambda: "", None, txt)
